@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    form{
+        border: 1px solid black;
+        margin: 20px 500px;
+        border-radius: 30px;
+    }
+    form h2{
+        display: flex;
+        justify-content: center;
+    }
+
+    form div{
+        display: flex;
+        flex-direction: column;
+        padding-left: 30px;
+        gap: 5px;
+        margin-bottom: 10px;
+        
+    }
+
+    form div input{
+        width: 250px;
+    }
+    input[type="submit"]{
+        width: 90px;
+    }
+
+    
+</style>
+<body>
+
+    <form action="">
+        <h2>Pendaftaran</h2>
+        <div>
+            <label for="nlengkap">Nama Lengkap</label>
+            <input type="text" id="nlengkap" name="nlengkap" placeholder="John Doe">
+        </div>
+        
+
+        <div>
+            <label for="notelepon">Nomor Telepon</label>
+            <input type="text" id="notelepon" name="notelepon" placeholder="xxxx-xxxx-xxxx">
+        </div>
+        
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="email@nomail.com">
+        </div>
+
+        <div class="submit">            
+            <input type="submit" value="Daftar">
+        </div>
+
+
+    </form>
+
+
+
+
+
+</body>
+</html>
