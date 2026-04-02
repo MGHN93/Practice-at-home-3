@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics - Interactive Learning Module</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <nav class="navbar bg-dark sticky-top" data-bs-theme="dark">
+        <div class="container-lg">
+            <span class="navbar-brand mb-0 h1">🎓 JavaScript Basics - Interactive Learning</span>
+        </div>
+    </nav>
+
+    <div class="container-lg">
+        <!-- LESSON 1: DOM & EVENT LISTENERS -->
+        <div class="lesson-card pair-programming">
+            <div class="p-4">
+                <div class="lesson-title">
+                    <span class="badge bg-success badge-lesson">Pair Programming</span>
+                    Lesson 1: DOM & Event Listeners - Build a Shopping List
+                </div>
+
+                <div class="problem-section">
+                    <h5>📌 Problem:</h5>
+                    <p>Create a shopping list app where users can add items by typing and clicking a button. The new items
+                        should appear on the list and users can remove items by clicking a delete button.</p>
+                    <p><strong>Real-world use:</strong> E-commerce websites use this to manage shopping carts, to-do apps
+                        use it for tasks.</p>
+                </div>
+
+                <div class="key-concept">
+                    <strong>Key Concepts:</strong>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li><strong>DOM (Document Object Model)</strong> - The structure of your HTML that you can
+                            manipulate with JavaScript</li>
+                        <li><strong>Event Listener</strong> - Listen for user actions (click, type, submit) and respond
+                        </li>
+                        <li><strong>getElementById / querySelector</strong> - How to select elements from the DOM</li>
+                    </ul>
+                </div>
+
+                <h5 style="margin-top: 20px;">💻 Interactive Demo:</h5>
+                <div class="interactive-area">
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                        <input type="text" id="shoppingInput" placeholder="Enter an item (e.g., Milk, Bread)">
+                        <button class="btn-primary-custom" onclick="addShoppingItem()">Add Item</button>
+                    </div>
+                    <div id="shoppingList"></div>
+                </div>
+
+                <h5>🔧 Your Turn - Write the Code:</h5>
+                <div class="code-template">
+                    <strong>// TODO: Complete this function</strong><br><br>
+                    function addShoppingItem() {<br>
+                    &nbsp;&nbsp;// 1. Get the input value<br>
+                    &nbsp;&nbsp;// const itemText = ...<br>
+                    <br>
+                    &nbsp;&nbsp;// 2. Check if input is not empty<br>
+                    &nbsp;&nbsp;// if (...) { return; }<br>
+                    <br>
+                    &nbsp;&nbsp;// 3. Create a new div element<br>
+                    &nbsp;&nbsp;// const itemDiv = ...<br>
+                    <br>
+                    &nbsp;&nbsp;// 4. Add HTML content with delete button<br>
+                    &nbsp;&nbsp;// itemDiv.innerHTML = ...<br>
+                    <br>
+                    &nbsp;&nbsp;// 5. Add to the list<br>
+                    &nbsp;&nbsp;// list.appendChild(itemDiv);<br>
+                    <br>
+                    &nbsp;&nbsp;// 6. Clear the input<br>
+                    &nbsp;&nbsp;// input.value = '';<br>
+                    }
+                </div>
+
+                <div class="hint">
+                    <strong>💡 Helpful Methods:</strong>
+                    <ul style="margin: 10px 0 0 20px; font-size: 0.95rem;">
+                        <li><code>document.getElementById('id')</code> - Get element by ID</li>
+                        <li><code>.value</code> - Get text from input field</li>
+                        <li><code>document.createElement('div')</code> - Create new HTML element</li>
+                        <li><code>.appendChild(element)</code> - Add element to the page</li>
+                        <li><code>.remove()</code> - Remove element from the page</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRACTICE 1 -->
+        <div class="lesson-card practice">
+            <div class="p-4">
+                <div class="lesson-title">
+                    <span class="badge bg-warning badge-lesson">Practice</span>
+                    Practice 1: Build a Note-Taking App
+                </div>
+
+                <div class="problem-section">
+                    <h5>📌 Your Challenge:</h5>
+                    <p>Create a note-taking app where users can write a note, click "Save Note" to add it to a list of
+                        notes, and delete notes when they want. Each note should have a timestamp showing when it was
+                        created.</p>
+                    <p><strong>Hint:</strong> Use <code>new Date().toLocaleTimeString()</code> to get the current time.</p>
+                </div>
+
+                <h5 style="margin-top: 20px;">💻 Interactive Area:</h5>
+                <div class="interactive-area">
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap;">
+                        <textarea id="noteInput" placeholder="Write your note here..." style="flex: 1; min-height: 60px; padding: 10px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                    </div>
+                    <button class="btn-primary-custom" onclick="addNote()">Save Note</button>
+                    <div id="notesList" style="margin-top: 15px;"></div>
+                </div>
+
+                <div class="hint">
+                    <strong>📝 Steps to follow:</strong>
+                    <ol style="margin: 10px 0 0 20px; font-size: 0.95rem;">
+                        <li>Get the textarea and notes list using getElementById</li>
+                        <li>Create addNote() function that gets the note text</li>
+                        <li>Check if note is empty, if so alert the user</li>
+                        <li>Get current timestamp with <code>new Date().toLocaleTimeString()</code></li>
+                        <li>Create a new div for each note with text + timestamp</li>
+                        <li>Add a delete button</li>
+                        <li>Append to notesList and clear the textarea</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- LESSON 2: IF/ELSE CONDITIONS -->
+        <div class="lesson-card pair-programming">
+            <div class="p-4">
+                <div class="lesson-title">
+                    <span class="badge bg-success badge-lesson">Pair Programming</span>
+                    Lesson 2: If/Else Conditions - Age Verification for Discounts
+                </div>
+
+                <div class="problem-section">
+                    <h5>📌 Problem:</h5>
+                    <p>Create an age verification system for a store. Users enter their age, and the system tells them
+                        if they get a student discount (age 13-17), senior discount (age 65+), or regular price.</p>
+                    <p><strong>Real-world use:</strong> E-commerce sites use this for age restrictions, stores use this
+                        for discount calculations, websites use this for content filtering.</p>
+                </div>
+
+                <div class="key-concept">
+                    <strong>Key Concepts:</strong>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li><strong>if/else if/else</strong> - Make decisions in your code</li>
+                        <li><strong>Comparison operators</strong> - ===, !=, &lt;, &gt;, &lt;=, &gt;=</li>
+                        <li><strong>Logical operators</strong> - && (AND), || (OR)</li>
+                    </ul>
+                </div>
+
+                <h5 style="margin-top: 20px;">💻 Interactive Demo:</h5>
+                <div class="interactive-area">
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="number" id="ageInput" placeholder="Enter your age" min="1" max="150">
+                        <button class="btn-primary-custom" onclick="checkDiscount()">Check Discount</button>
+                    </div>
+                    <div id="discountResult"></div>
+                </div>
+
+                <h5>🔧 Your Turn - Write the Code:</h5>
+                <div class="code-template">
+                    <strong>// TODO: Complete this function</strong><br><br>
+                    function checkDiscount() {<br>
+                    &nbsp;&nbsp;// 1. Get age from input and convert to number<br>
+                    &nbsp;&nbsp;// const age = parseInt(...);<br>
+                    <br>
+                    &nbsp;&nbsp;// 2. Validate age is a valid number<br>
+                    &nbsp;&nbsp;// if (isNaN(age) || age &lt; 0) { ... }<br>
+                    <br>
+                    &nbsp;&nbsp;// 3. Use if/else to check discount<br>
+                    &nbsp;&nbsp;// if (age &gt;= 13 && age &lt;= 17) { ... }<br>
+                    &nbsp;&nbsp;// else if (age &gt;= 65) { ... }<br>
+                    &nbsp;&nbsp;// else if (age &lt; 13) { ... }<br>
+                    &nbsp;&nbsp;// else { ... }<br>
+                    }
+                </div>
+
+                <div class="hint">
+                    <strong>💡 Understanding if/else:</strong>
+                    <ul style="margin: 10px 0 0 20px; font-size: 0.95rem;">
+                        <li><code>if (condition) { }</code> - Run code if true</li>
+                        <li><code>else if (condition) { }</code> - Run if first is false, but this is true</li>
+                        <li><code>else { }</code> - Run if all previous are false</li>
+                        <li><code>&&</code> - AND (both must be true)</li>
+                        <li><code>||</code> - OR (at least one must be true)</li>
+                        <li><code>parseInt()</code> - Convert string to number</li>
+                        <li><code>isNaN()</code> - Check if not a number</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRACTICE 2 -->
+        <div class="lesson-card practice">
+            <div class="p-4">
+                <div class="lesson-title">
+                    <span class="badge bg-warning badge-lesson">Practice</span>
+                    Practice 2: Grade Calculator
+                </div>
+
+                <div class="problem-section">
+                    <h5>📌 Your Challenge:</h5>
+                    <p>Create a grade calculator. User enters a score (0-100), and the system shows the grade:</p>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li>A: 90-100</li>
+                        <li>B: 80-89</li>
+                        <li>C: 70-79</li>
+                        <li>D: 60-69</li>
+                        <li>F: Below 60</li>
+                    </ul>
+                    <p><strong>Bonus:</strong> Show an encouraging message based on the grade.</p>
+                </div>
+
+                <h5 style="margin-top: 20px;">💻 Interactive Area:</h5>
+                <div class="interactive-area">
+                    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                        <input type="number" id="scoreInput" placeholder="Enter your score (0-100)" min="0" max="100">
+                        <button class="btn-primary-custom" onclick="calculateGrade()">Calculate Grade</button>
+                    </div>
+                    <div id="gradeResult"></div>
+                </div>
+
+                <div class="hint">
+                    <strong>📝 Steps to follow:</strong>
+                    <ol style="margin: 10px 0 0 20px; font-size: 0.95rem;">
+                        <li>Get score from input</li>
+                        <li>Validate it's between 0-100</li>
+                        <li>Use if/else if/else to check grade range</li>
+                        <li>Display the grade letter with a message</li>
+                        <li>Show the result in the gradeResult div</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- LESSON 3: LOOPS -->
+        <div class="lesson-card pair-programming">
+            <div class="p-4">
+                <div class="lesson-title">
+                    <span class="badge bg-success badge-lesson">Pair Programming</span>
+                    Lesson 3: Loops - Display a Product Catalog
+                </div>
+
+                <div class="problem-section">
+                    <h5>📌 Problem:</h5>
+                    <p>Create a product display system that loops through a list of products and shows them on the page
+                        with their name, price, and a "Buy" button.</p>
+                    <p><strong>Real-world use:</strong> E-commerce sites use loops to display products, social media
+                        uses loops for posts, news sites use loops for articles.</p>
+                </div>
+
+                <div class="key-concept">
+                    <strong>Key Concepts:</strong>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li><strong>for loop</strong> - Repeat code a specific number of times</li>
+                        <li><strong>Arrays</strong> - Store multiple items in one variable</li>
+                        <li><strong>Array.forEach()</strong> - Loop through each item in an array</li>
+                    </ul>
+                </div>
+
+                <h5 style="margin-top: 20px;">💻 Interactive Demo:</h5>
+                <div class="interactive-area">
+                    <button class="btn-primary-custom" onclick="displayProducts()">Load Products</button>
+                    <div id="productsList" style="margin-top: 15px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;"></div>
+                </div>
+
+                <h5>🔧 Your Turn - Write the Code:</h5>
+                <div class="code-template">
+                    <strong>// Array of products (GIVEN)</strong><br>
+                    const products = [<br>
+                    &nbsp;&nbsp;{ name: 'Laptop', price: '$999' },<br>
+                    &nbsp;&nbsp;{ name: 'Mouse', price: '$25' },<br>
+                    &nbsp;&nbsp;{ name: 'Keyboard', price: '$75' },<br>
+                    &nbsp;&nbsp;{ name: 'Monitor', price: '$299' },<br>
+                    &nbsp;&nbsp;{ name: 'Headphones', price: '$120' }<br>
+                    ];<br><br>
+                    <strong>// TODO: Complete this function</strong><br>
+                    function displayProducts() {<br>
+                    &nbsp;&nbsp;// 1. Get the productsList element<br>
+                    &nbsp;&nbsp;// 2. Clear any previous products (innerHTML = '')<br>
+                    &nbsp;&nbsp;// 3. Loop through products with forEach<br>
+                    &nbsp;&nbsp;// 4. Create a card for each product<br>
+                    &nbsp;&nbsp;// 5. Add card to productsList<br>
+                    }
+                </div>
+
+                <div class="hint">
+                    <strong>💡 Understanding Loops:</strong>
+                    <ul style="margin: 10px 0 0 20px; font-size: 0.95rem;">
+                        <li><code>for (let i = 0; i &lt; 5; i++) { }</code> - Loop 5 times</li>
+                        <li><code>array.forEach(function(item) { })</code> - Loop through each item</li>
+                        <li><code>array[0]</code> - Access first item</li>
+                        <li><code>item.name</code> - Access property of an object</li>
+                        <li>Use loops to avoid repeating code</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRACTICE 3 -->
+        <div class="lesson-card practice">
+            <div class="p-4">
+                <div class="lesson-title">
+                    <span class="badge bg-warning badge-lesson">Practice</span>
+                    Practice 3: Multiplication Table Generator
+                </div>
+
+                <div class="problem-section">
+                    <h5>📌 Your Challenge:</h5>
+                    <p>Create a multiplication table generator. User enters a number (1-12), and the system displays the
+                        multiplication table for that number (e.g., 5 × 1 = 5, 5 × 2 = 10, ... 5 × 10 = 50).</p>
+                    <p><strong>Hint:</strong> Use a for loop that goes from 1 to 10. For each number, calculate and
+                        display the result.</p>
+                </div>
+
+                <h5 style="margin-top: 20px;">💻 Interactive Area:</h5>
+                <div class="interactive-area">
+                    <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                        <input type="number" id="tableInput" placeholder="Enter a number (1-12)" min="1" max="12">
+                        <button class="btn-primary-custom" onclick="generateTable()">Generate Table</button>
+                    </div>
+                    <div id="tableResult" style="margin-top: 15px;"></div>
+                </div>
+
+                <div class="hint">
+                    <strong>📝 Steps to follow:</strong>
+                    <ol style="margin: 10px 0 0 20px; font-size: 0.95rem;">
+                        <li>Get the number from input</li>
+                        <li>Validate it's between 1-12</li>
+                        <li>Create a variable to store HTML: <code>let html = ''</code></li>
+                        <li>Use a for loop: <code>for (let i = 1; i &lt;= 10; i++)</code></li>
+                        <li>Inside loop, calculate <code>number × i</code></li>
+                        <li>Add each result to the html string</li>
+                        <li>Display all results in tableResult div</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- BONUS: COMBINED CHALLENGE -->
+        <div class="lesson-card" style="border-left-color: #6f42c1;">
+            <div class="p-4">
+                <div class="lesson-title">
+                    <span class="badge bg-info badge-lesson">Bonus</span>
+                    Challenge: Todo App with All Concepts
+                </div>
+
+                <div class="problem-section">
+                    <h5>📌 Your Challenge:</h5>
+                    <p>Create a complete todo app that combines all concepts:</p>
+                    <ul style="margin: 10px 0 0 20px;">
+                        <li>Add todos (DOM + Event Listeners)</li>
+                        <li>Mark todos as priority (high/medium/low) with different colors (If/Else)</li>
+                        <li>Show statistics: total todos, completed todos (Loops)</li>
+                    </ul>
+                </div>
+
+                <h5 style="margin-top: 20px;">💻 Interactive Area:</h5>
+                <div class="interactive-area">
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" id="todoInput" placeholder="What do you need to do?">
+                        <select id="prioritySelect" style="margin-left: 10px;">
+                            <option value="low">Low Priority</option>
+                            <option value="medium" selected>Medium Priority</option>
+                            <option value="high">High Priority</option>
+                        </select>
+                        <button class="btn-primary-custom" onclick="addTodo()" style="margin-left: 10px;">Add Todo</button>
+                    </div>
+                    <div id="todoStats" style="margin-bottom: 15px; padding: 10px; background: #e7f3ff; border-radius: 5px;">
+                        <strong>Total Todos: <span id="totalCount">0</span> | Completed: <span id="completedCount">0</span></strong>
+                    </div>
+                    <div id="todosList"></div>
+                </div>
+
+                <div class="hint">
+                    <strong>📝 What you need to code:</strong>
+                    <ol style="margin: 10px 0 0 20px; font-size: 0.95rem;">
+                        <li>Create an array to store todos</li>
+                        <li>Write addTodo() to add items to the array</li>
+                        <li>Write toggleTodo() to mark as complete/incomplete</li>
+                        <li>Write deleteTodo() to remove items</li>
+                        <li>Write renderTodos() to display all todos using forEach</li>
+                        <li>Write updateStats() to count total and completed todos</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+
+</html>
