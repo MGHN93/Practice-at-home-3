@@ -162,6 +162,27 @@
             font-family: 'Courier New', monospace;
         }
 
+        .todo-card{
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .high{
+            background-color: red;
+        }
+
+        .medium{
+            background-color: orange;
+        }
+
+        .low{
+            background-color: green;
+        }
+
+
+
         @media (max-width: 768px) {
             .lesson-card {
                 margin-bottom: 20px;
